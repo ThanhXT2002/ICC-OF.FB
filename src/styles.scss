@@ -28,7 +28,7 @@
   }
 
   .nav__link{
-    @apply py-3 lg:py-0  lg:place-content-center lg:hover:bg-custom-gradient lg:rounded lg:hover:shadow-custom-shadow lg:hover:border-b-2 border-gray-500
+    @apply py-3 lg:py-0 mx-2 bg-white  lg:place-content-center lg:hover:bg-custom-gradient lg:rounded lg:hover:shadow-custom-shadow lg:hover:border-b-2 border-gray-500
   }
 
   .menu__item{
@@ -39,7 +39,7 @@
             before:lg:border-[12px] before:lg:border-transparent before:lg:border-b-whiteColor
   }
 
-  
+
 }
 
 @layer utilities{
