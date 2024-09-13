@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  html{
+      @apply scroll-smooth;
+  }
+  body{
+      @apply  -tracking-normal font-fira text-whiteColor;
+  }
+  section{
+      @apply pt-16 pb-4 md:pt-20
+  }
+}
+
+@layer components{
+  .btn{
+  @apply inline-block text-sm py-3 px-8 capitalize text-center cursor-pointer rounded-full ease-linear duration-200;
+  }
+
+  .btn-primary{
+      @apply text-white bg-primaryColor hover:bg-secondaryColor;
+  }
+
+  .nav__link{
+    @apply py-3 lg:py-0  lg:place-content-center lg:hover:bg-custom-gradient lg:rounded lg:hover:shadow-custom-shadow lg:hover:border-b-2 border-gray-500
+  }
+
+  .menu__item{
+   @apply lg:absolute lg:top-full lg:left-0 bg-white lg:py-2 lg:mt-1 lg:rounded-md lg:min-w-max
+            lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100
+            lg:transition-all lg:duration-300 lg:ease-in-out lg:px-[1px]
+            before:lg:content-[''] before:lg:absolute before:lg:-top-5 before:lg:left-[20%] before:lg:-translate-x-1/2
+            before:lg:border-[12px] before:lg:border-transparent before:lg:border-b-whiteColor
+  }
+
+  
+}
+
+@layer utilities{
+ .title{
+  @apply  text-4xl lg:text-5xl text-secondaryColor font-bold font-fira
+ }
+}
