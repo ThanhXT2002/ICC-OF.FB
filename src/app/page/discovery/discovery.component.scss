@@ -1,0 +1,18 @@
+.icon-img {
+  width: 100px; /* Điều chỉnh kích thước phù hợp */
+  height: 100px;
+  transition: all 0.3s ease;
+}
+
+.icon-img:hover {
+  transform: scale(1.2);
+  filter: brightness(0) invert(1);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+}
+
+// .hexagon {
+//   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+// }
+.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}

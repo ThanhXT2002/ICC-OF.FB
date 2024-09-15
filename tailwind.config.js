@@ -8,10 +8,12 @@ module.exports = {
       backgroundImage:{
         'home': 'url(./assets/img/bussiness/businessman6.jpg)',
         'discovery': 'url(./assets/img/icon/discovery.jpg)',
+        'video': 'url(./assets/video/5823401530981.mp4)',
+        'discovery-page': 'url(./assets/img/bussiness/businessman5.jpg)',
         'custom-gradient': 'linear-gradient(to top, rgb(200, 200, 200) 0%, white 50%, white 60%, rgb(200, 200, 200) 100%)',
       },
       boxShadow: {
-        'custom-shadow': '0 -1px 1px rgb(179, 177, 177), 2px 0 2px rgb(179, 177, 177), -2px 0 2px rgb(179, 177, 177)',
+        'custom-shadow': '0 -1px 1px rgb(179, 177, 177), 2px 0 2px rgb(179, 177, 177), -1px 0 1px rgb(179, 177, 177)',
       },
       colors: {
         primaryColor: '#0563bb',

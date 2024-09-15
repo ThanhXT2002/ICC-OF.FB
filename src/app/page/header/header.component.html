@@ -1,7 +1,7 @@
 <header
-  class="h-nav relative font-fira text-gray-600 flex lg:flex-row justify-between justify-items-center items-center  w-full bg-whiteColor px-1">
+  class="h-nav relative font-fira text-gray-600 flex lg:flex-row justify-between justify-items-center items-center  w-full bg-whiteColor">
   <div class="logo h-full  flex justify-start min-w-max">
-    <a class="flex justify-between items-center cursor-pointer">
+    <a class="flex justify-between items-center cursor-pointer" routerLink="/home">
       <img src="assets/img/logo/ICC.png" alt="" class="h-11  ml-2 ">
       <img src="assets/img/logo/offb_new.jpg" alt="" class="hidden md:block h-12 lg:h-10 mx-3 rounded-full border-4 border-blue-200  ">
     </a>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="nav-right h-full flex items-center lg:w-[30%]  ">
-    <ul class="flex  justify-between xl:justify-end justify-items-center items-center h-full w-full text-xl text-black cursor-pointer">
+    <ul class="flex  justify-between lg:justify-end justify-items-center items-center h-full w-full text-xl text-black cursor-pointer">
       <li  class="text-gray-400 hidden xl:block">|</li>
       <li  class="nav__link flex justify-center items-center h-full text-center aspect-square">
         <i class="ri-search-line"></i>
@@ -56,7 +56,7 @@
       <li class="flex justify-center h-full items-center aspect-square nav__link">
         <i class="ri-global-line"></i>
       </li>
-      <li class="hidden xl:block nav__link flex justify-center items-center h-full text-center aspect-square">
+      <li class="hidden xl:block nav__link  flex justify-center items-center h-full text-center aspect-square mx-0">
         <i class="ri-home-4-fill"></i>
       </li>
       <li (click)="toggleMobileMenu()" class=" block xl:hidden nav__link  h-full text-center place-content-center aspect-square">
