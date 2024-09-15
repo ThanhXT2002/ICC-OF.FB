@@ -1,4 +1,5 @@
 import { AboutComponent } from './page/about/about.component';
+import { DiscoveryComponent } from './page/discovery/discovery.component';
 import { HomeComponent } from './page/home/home.component';
 import { LayoutComponent } from './page/layout/layout.component';
 import { Routes } from '@angular/router';
@@ -15,6 +16,7 @@ export const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'discovery', component: DiscoveryComponent },
     ],
   },
 ];

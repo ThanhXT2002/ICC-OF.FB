@@ -1,3 +1,29 @@
-<div class="bg-home bg-cover bg-no-repeat w-full h-[calc(100%-4.8rem)]">
-fiochreiohbgvirheoghvo
+<div class="bg-home bg-cover bg-no-repeat w-full h-[calc(100%-4.8rem)] text-center ">
+  <div class="relative">
+    <div class="py-16 space-y-8">
+      <h1 class="title text-primaryDark">Chuyên gia bảo hiểm xe</h1>
+      <p class="text-white text-2xl"> <span class="font-light">Hotline:</span> 0936 224 224</p>
+    </div>
+
+    <div class="relative">
+      <div class="absolute left-[8rem] lg:left-[22rem] top-[50px]">
+        <div class="absolute top-[-65px] left-[35px] z-10" [class.hidden]="toggleValue">
+          <div class="bg-primaryColor text-white p-3 rounded-lg w-max ml-10">
+            <p class="relative z-10 text-xl">Khám phá ngay</p>
+            <div class="absolute top-6 left-16 w-0 h-0 border-l-transparent border-r-[30px] border-r-transparent border-t-[90px] border-t-primaryColor rotate-45"></div>
+          </div>
+        </div>
+
+        <div class="absolute">
+          <app-drag-toggle [(ngModel)]="toggleValue"
+                           (dragEnd)="onDragEnd($event)"
+                           (click)="navigateToDiscovery()">
+          </app-drag-toggle>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
 </div>

@@ -1,0 +1,48 @@
+
+input:checked + label span {
+  left: calc(100%);
+  transform: translateX(-100%);
+}
+
+label:active span {
+  width: 150px;
+}
+
+
+// [speech-bubble], [speech-bubble] * { box-sizing: border-box }
+
+// [speech-bubble]{
+//   --bbColor: blue;
+//   --bbArrowSize: 5rem
+// }
+
+// [speech-bubble]::before{
+//   content: '';
+//   position: absolute;
+//   background: var(--bbColor);
+// }
+// [speech-bubble][pbottom]::before{
+//   --width: calc(var(--bbArrowSize) / 2 * 3);
+//   height: var(--bbArrowSize);
+//   width: var(--width);
+// }
+// [speech-bubble][pbottom]::before{
+//   top: 100%;
+// }
+// [speech-bubble][pbottom][aleft]::before{
+//   left: 1rem;
+//   clip-path: polygon(25% 0, 100% 0, 0% 100%)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+

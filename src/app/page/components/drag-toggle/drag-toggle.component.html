@@ -1,0 +1,10 @@
+<div class="relative w-[200px] h-[100px]" (mouseenter)="onHover()" (mouseleave)="onMouseLeave()">
+  <input type="checkbox" [checked]="checked" class="hidden" />
+  <div
+    class="block w-[200px] h-[100px] bg-sky-500 bg-opacity-30 rounded-full relative cursor-pointer transition-all duration-500 outline outline-cyan-100">
+    <div cdkDrag cdkDragBoundary=".relative" (cdkDragMoved)="onDragMoved($event)" (cdkDragEnded)="onDragEnded($event)"
+      [cdkDragFreeDragPosition]="dragPosition"
+      class="absolute top-0 left-0 w-[100px] h-[100px] bg-discovery bg-cover rounded-full transition-all duration-500 border-[3px] border-gray-200">
+    </div>
+  </div>
+</div>

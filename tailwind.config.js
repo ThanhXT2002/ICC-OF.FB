@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       backgroundImage:{
         'home': 'url(./assets/img/bussiness/businessman6.jpg)',
+        'discovery': 'url(./assets/img/icon/discovery.jpg)',
         'custom-gradient': 'linear-gradient(to top, rgb(200, 200, 200) 0%, white 50%, white 60%, rgb(200, 200, 200) 100%)',
       },
       boxShadow: {

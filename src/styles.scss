@@ -32,11 +32,11 @@
   }
 
   .menu__item{
-   @apply lg:absolute lg:top-full lg:left-0 bg-white lg:py-2 lg:mt-1 lg:rounded-md lg:min-w-max
+   @apply lg:absolute lg:top-full lg:left-0 bg-white lg:mt-1 lg:rounded-md lg:min-w-max
             lg:invisible lg:group-hover:visible lg:opacity-0 lg:group-hover:opacity-100
             lg:transition-all lg:duration-300 lg:ease-in-out lg:px-[1px]
             before:lg:content-[''] before:lg:absolute before:lg:-top-5 before:lg:left-[20%] before:lg:-translate-x-1/2
-            before:lg:border-[12px] before:lg:border-transparent before:lg:border-b-whiteColor
+            before:lg:border-[11px] before:lg:border-transparent before:lg:border-b-whiteColor
   }
 
 
@@ -44,6 +44,6 @@
 
 @layer utilities{
  .title{
-  @apply  text-4xl lg:text-5xl text-secondaryColor font-bold font-fira
+  @apply  text-4xl lg:text-6xl  font-normal font-fira
  }
 }
