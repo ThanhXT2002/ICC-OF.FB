@@ -38,7 +38,13 @@
             before:lg:content-[''] before:lg:absolute before:lg:-top-5 before:lg:left-[20%] before:lg:-translate-x-1/2
             before:lg:border-[11px] before:lg:border-transparent before:lg:border-b-whiteColor
   }
+  .icon-img {
+    @apply w-[100px] h-auto transition-all duration-300 ease-in-out;
+  }
 
+  .icon-img:hover {
+    @apply brightness-0 invert ;
+  }
 
 }
 
@@ -46,4 +52,19 @@
  .title{
   @apply  text-4xl lg:text-5xl  font-normal font-fira
  }
+
+ .shadow-glow {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
 }
+
+.shadow_img{
+  box-shadow: rgba(21, 90, 239, 0.56) 0px 22px 100px 30px;
+
+}
+
+}
+
+.hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+

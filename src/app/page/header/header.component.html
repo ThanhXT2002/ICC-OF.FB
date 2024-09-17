@@ -9,7 +9,7 @@
       <p class="text-gray-500 font-[410] tracking-tighter text-sm ">More Options, More Better!</p>
     </div>
   </div>
-  <div [class.hidden]="!isMobileMenuOpen()" class="nav__main lg:block w-[80%] md:w-[50%] sm:fixed sm:top-0 right-0 h-full  content-center lg:w-auto lg:text-sm text-base absolute lg:static bg-white z-10 ">
+  <div [class.hidden]="!isMobileMenuOpen()" class="nav__main lg:block w-[80%] md:w-[50%] sm:fixed sm:top-0 right-0 h-full  content-center lg:w-auto lg:text-sm text-base absolute lg:static bg-white z-20 ">
     <ul class="flex flex-col lg:flex-row lg:justify-between lg:items-center mt-14 lg:mt-auto h-full cursor-pointer bg-white ">
       <li class="pl-10 lg:px-3  nav__link lg:h-full" routerLink="/home" >Trang chủ</li>
       <li class="pl-10 lg:px-3 nav__link lg:h-full" routerLink="/about">Giới thiệu</li>
@@ -22,12 +22,12 @@
         <i class="ri-arrow-up-s-line transition-transform hidden group-hover:inline-block"></i>
 
         <ul class="menu__item">
-            @for(item of menuItem(); track item.label) {
-              <li class="nav__link px-3 py-2 mx-0">
-                <a [routerLink]="[item.route]" routerLinkActive="active" class="flex justify-between items-center gap-x-4 w-full h-full">
-                  <span>{{item.label}}</span>
+            @for(product of products; track product.key) {
+              <li class="nav__link px-3 py-2 mx-0 shadow-md">
+                <a [routerLink]="['/product', product.slug]" routerLinkActive="active" class="flex justify-between items-center gap-x-4 w-full h-full">
+                  <span class="capitalize">Bảo hiểm {{product.shortTiltle}}</span>
                   <div class="image-container hidden lg:block">
-                    <img [src]="item.icon" class="h-[30px] w-[30px]" [alt]="item.label">
+                    <img [src]="product.icon" class="h-[30px] w-[30px]" [alt]="product.shortTiltle">
                   </div>
                 </a>
               </li>

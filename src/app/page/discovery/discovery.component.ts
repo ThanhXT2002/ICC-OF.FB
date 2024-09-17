@@ -1,4 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { ProductIccService } from '../../core/service/product.service';
+import { IProduct } from '../../core/interface/product.interface';
+import { ProductMenuComponent } from "../components/product-menu/product-menu.component";
+import { SanitizeHtmlPipe } from '../../core/pipe/sanitize-html.pipe';
+import { CommonModule } from '@angular/common';
 
 
 export type MenuItemHeader = {
@@ -10,40 +16,50 @@ export type MenuItemHeader = {
 @Component({
   selector: 'app-discovery',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterModule,
+    ProductMenuComponent,
+    SanitizeHtmlPipe,
+    CommonModule
+],
   templateUrl: './discovery.component.html',
   styleUrl: './discovery.component.scss'
 })
-export class DiscoveryComponent {
-  menuItem = signal<MenuItemHeader[]>([
-    {
+export class DiscoveryComponent implements OnInit {
 
-      label: "Bảo Hiểm TNDS BB Xe Máy",
-      route: '/about',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
+  products: IProduct[] = [];
+  selectedProduct: IProduct | null = null;
 
-      label: "Bảo Hiểm TNDS BB Ô Tô",
-      route: '/home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
+  constructor(
+    private router: Router,
+    private productService: ProductIccService,
+  ){}
 
-      label: "Bảo Hiểm Vật Chất Ô Tô",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-      label: "Bảo Hiểm Tai Nạn Cá Nhân",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-      label: "Bảo Hiểm Sức Khỏe",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-  ]);
+  ngOnInit(): void {
+    this.getAllProducts()
+  }
+
+  getAllProducts() {
+    this.productService.getAll().subscribe({
+      next: (products) => {
+        this.products = products;
+      },
+      error: (error) => {
+        console.error('Lỗi khi lấy danh sách bài viết:', error);
+      }
+    });
+  }
+
+  showProductDetails(product: IProduct) {
+    this.selectedProduct = product;
+  }
+
+  hideProductDetails() {
+    this.selectedProduct = null;
+  }
+
+  navigateToProduct(slug: string) {
+    this.router.navigate(['/product', slug]);
+  }
 
 }

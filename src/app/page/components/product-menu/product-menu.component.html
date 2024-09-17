@@ -1,0 +1,16 @@
+<div class="list-product grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+  @for (product of products; track product.key) {
+    <div class="flex-col justify-between items-center justify-items-center group"
+    (mouseenter)="navigateToProduct(product.slug)"
+         (mouseleave)="navigateBack()">
+      <img [src]="product.icon" class="icon-img inline-block" alt="{{product.shortTiltle}}">
+      <div class="lg:invisible lg:group-hover:visible mt-3">
+        <p class="text-xs pb-1 border-b border-gray-300 max-w-fit inline-block">{{product.shortTiltle}}</p>
+        <br>
+        <button class="text-red-500 custom-shadow bg-custom-gradient font-semibold px-2 py-1 rounded-full text-xs mt-1">
+          Mua ngay
+        </button>
+      </div>
+    </div>
+  }
+</div>
