@@ -1,45 +1,56 @@
-<div class="bg-discovery-page bg-cover bg-no-repeat w-full h-auto lg:min-h-[calc(100%-4.8rem)]    relative">
+<div class="bg-cover bg-discovery-page bg-no-repeat w-full h-auto lg:min-h-[calc(100%-4.8rem)] relative"
+  [ngStyle]="{
+    'background-image': 'url(./assets/img/man.png), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + (selectedProduct?.image || './assets/img/black.png') + '), linear-gradient(rgb(24, 24, 29), black)',
+    'background-position': 'left, right, right, center',
+    'background-size': '60% 100%, 80% 100%, 80% 100%, 100% 100%',
+    'background-repeat': 'no-repeat, no-repeat, no-repeat, no-repeat'
+  }"
+>
+<!-- bg-discovery-page -->
   <div class="py-7  lg:py-10 space-y-8 text-center bg-water-mark w-[80%] bg-contain bg-center h-auto mx-auto">
     <h1 class="title text-blue-400">Chuyên gia bảo hiểm xe</h1>
     <p class="text-white text-xl"><span class="font-light">Hotline:</span> 0936 224 224</p>
 </div>
 
   <div class="flex flex-col lg:flex-row gap-x-5 w-full px-5 justify-end ">
-    <div class="lg:absolute lg:-bottom-5 left-0 lg:m-5 lg:w-[50%]">
-      <div class="absolute left-[15%] -top-[21rem] w-full">
-        <img src="assets/img/logo/icc_shadow.png" class="lg:w-96" alt="" [class.hidden]="selectedProduct">
-        <div class="hexagon w-[22rem] h-72 relative overflow-hidden shadow_img shadow-2xl shawdow" [class.hidden]="!selectedProduct">
-          @if (selectedProduct) {
-          <img src="{{selectedProduct.gif}}" class="w-full h-full object-cover " alt="">
-          }
-        </div>
-      </div>
-      <div class="border border-white rounded-md h-auto text-center p-2 pt-5">
-        <h3 class="text-xl mb-3">Các sản phẩm <span class="text-blue-500">Bảo hiểm</span> dành cho bạn và người thân
-        </h3>
-        <div class="list-product grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          @for (product of products; track product.key) {
-          <div class="flex-col justify-between items-center justify-items-center group justify-self-center"
-            (mouseenter)="showProductDetails(product)" (mouseleave)="hideProductDetails()"
-            (click)="navigateToProduct(product.slug)">
-            <div class="relative overflow-hidden inner-shadow-ellipse">
-              <img [src]="product.icon" alt="{{product.shortTiltle}}"
-                   class="inline-block icon-img relative z-10 transition-transform duration-300 group-hover:scale-125">
-              <div class="absolute inset-0 bg-ellipse-inner-shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="lg:invisible lg:group-hover:visible mt-3">
-              <p class="text-xs pb-1 border-b border-gray-300 max-w-fit inline-block">{{product.shortTiltle}}</p>
-              <br>
-              <button
-                class="text-red-500 custom-shadow bg-custom-gradient font-semibold px-2 py-1 rounded-full text-xs mt-1">
-                Mua ngay
-              </button>
-            </div>
+    <div class="">
+      <div class="lg:absolute lg:-bottom-5 left-0 lg:m-5 lg:w-[50%]">
+        <div class="mb-5 lg:mb-[8%] flex justify-center lg:justify-start lg:ml-[18%]">
+            <img src="assets/img/logo/icc_shadow.png" class=" w-50% lg:w-96" alt="" [class.hidden]="selectedProduct">
+            <div class="hexagon w-80 h-72  overflow-hidden shadow_img shadow-2xl" [class.hidden]="!selectedProduct">
+              @if (selectedProduct) {
+              <img src="{{selectedProduct.gif}}" class="w-full h-full object-cover " alt="">
+              }
           </div>
-          }
+        </div>
+        <div class="border border-white rounded-md h-auto text-center p-5">
+          <h3 class="text-xl mb-3">Các sản phẩm <span class="text-blue-500">Bảo hiểm</span> dành cho bạn và người thân
+          </h3>
+          <div class="list-product grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            @for (product of products; track product.key) {
+            <div class="flex-col justify-between items-center justify-items-center group justify-self-center"
+              (mouseenter)="showProductDetails(product)" (mouseleave)="hideProductDetails()"
+              (click)="navigateToProduct(product.slug)">
+              <div class="relative overflow-hidden inner-shadow-ellipse">
+                <img [src]="product.icon" alt="{{product.shortTiltle}}"
+                     class="inline-block icon-img relative z-10 transition-transform duration-300 group-hover:scale-125">
+                <div class="absolute inset-0 bg-ellipse-inner-shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div class="lg:invisible lg:group-hover:visible my-3">
+                <p class="text-xs pb-1 border-b border-gray-300 max-w-fit inline-block">{{product.shortTiltle}}</p>
+                <br>
+                <button
+                  class="text-red-500 custom-shadow bg-custom-gradient font-semibold px-2 py-1 rounded-full text-xs mt-1">
+                  Mua ngay
+                </button>
+              </div>
+            </div>
+            }
+          </div>
         </div>
       </div>
     </div>
+
 
     <div class="lg:w-[40%] px-5 ] ">
       <!-- Phần hiển thị nội nội dung trang discover, khi hover vào img thì ẩn đi -->
