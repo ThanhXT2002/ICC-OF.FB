@@ -49,6 +49,14 @@
 }
 
 @layer utilities{
+
+  .bg__multi__home{
+    background-image: url('/assets/img/home_man.png'), url('/assets/img/home_layer.jpg');
+    background-position: left, right;
+    background-size: auto 100%,cover;
+    background-repeat: no-repeat, no-repeat;
+  }
+
  .title{
   @apply  text-4xl lg:text-5xl  font-normal font-fira
  }
