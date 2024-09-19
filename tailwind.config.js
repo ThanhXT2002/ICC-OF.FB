@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       backgroundImage:{
         'home': 'url(./assets/img/bussiness/businessman6.jpg)',
+        'about__1': 'url(./assets/img/about/about_image_1.png)',
+        'about__4': 'url(./assets/img/about/about_image_4.jpg)',
         'water-mark': 'url(./assets/img/water_mark.png)',
         'discovery': 'url(./assets/img/icon/discovery.jpg)',
         'video': 'url(./assets/video/5823401530981.mp4)',
@@ -34,7 +36,7 @@ module.exports = {
         darkColorLight: "#171717",
       },
       height: {
-        'nav': '4.2rem', // chiều cao nav cố định
+        'nav': '4.5rem', // chiều cao nav cố định
 
       },
       keyframes: {

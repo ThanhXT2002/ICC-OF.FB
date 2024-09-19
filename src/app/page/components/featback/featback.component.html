@@ -1,0 +1,20 @@
+<div class="bg-white p-3 shadow-2xl border-gray-400 border text-left text-black">
+  <div class="carousel-container">
+    <div class="carousel-wrapper" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+      <div class="slide" *ngFor="let testimonial of testimonials; let i = index">
+        <img [src]="testimonial.img" [alt]="testimonial.name" class="w-12 border-2 border-teal-400 rounded-full">
+        <p class="capitalize text-primaryDark font-semibold my-2">{{testimonial.name}}</p>
+        <p class="text-justify">{{testimonial.feedback}}</p>
+      </div>
+    </div>
+
+    <div class="pagination flex justify-start gap-x-2 mt-1">
+      <button (click)="prevSlide()" class="w-8 h-8 border-2 rounded-full p-4 flex justify-center items-center hover:border-teal-300 hover:text-teal-300">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <button (click)="nextSlide()" class="w-8 h-8 border-2 rounded-full p-4 flex justify-center items-center hover:border-teal-300 hover:text-teal-300">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+    </div>
+  </div>
+</div>

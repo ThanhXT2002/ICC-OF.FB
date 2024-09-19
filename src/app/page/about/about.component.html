@@ -1,1 +1,309 @@
-<p>about works!</p>
+<div class="w-full bg-white">
+  <div class="bg__about h-full lg:w-[35%] bg-no-repeat fixed left-0 z-30 mt-[4.5rem]">
+    <div class="absolute left-[8rem] lg:left-[42%] top-[42%]">
+      <div class="absolute top-[-65px] left-[35px] z-10" [class.hidden]="toggleValue">
+        <div class="bg-primaryColor text-white p-3 rounded-lg w-max ml-10">
+          <p class="relative z-10 text-xl">Khám phá ngay</p>
+          <div
+            class="absolute top-6 left-16 w-0 h-0 border-l-transparent border-r-[30px] border-r-transparent border-t-[90px] border-t-primaryColor rotate-45">
+          </div>
+        </div>
+      </div>
+      <div class="absolute">
+        <app-drag-toggle [(ngModel)]="toggleValue" (dragEnd)="onDragEnd($event)" (click)="navigateToDiscovery()">
+        </app-drag-toggle>
+      </div>
+    </div>
+  </div>
+  <div class="w-full bg-black">
+    <!-- Phần 1: Giới thiệu -->
+    <div class="bg-about__1 bg-cover bg-no-repeat w-full bg-bottom">
+      <div class="flex flex-col items-end text-right text-black h-screen w-full px-10">
+        <h6 class="font-normal capitalize py-2 mt-20 text-gray-600">
+          Công ty bảo hiểm ICC ECO
+        </h6>
+        <hr class="w-[30%] border" />
+        <h3 class="font-medium uppercase py-4 text-primaryDark">
+          Giới thiệu bảo hiểm ICC-OFFB
+        </h3>
+        <div class="text-left lg:mr-[10%] leading-7 w-[55%]">
+          <p class="text-justify py-2">
+            <span class="text-red-500 font-medium">Bảo hiểm ICC-OFFB</span> là
+            thành viên của Hệ sinh thái người dùng ô tô ICC – Hệ sinh thái cung
+            cấp các dịch vụ đáp ứng các nhu cầu khi sử dụng ô tô tại Việt Nam.
+            Với sự phong phú và đa dạng về dịch vụ từ mạng xã hội dành cho người
+            dùng ô tô, sàn thương mại điện tử cho lĩnh vực ô tô, trợ lý ảo hỗ
+            trợ vận hành ô tô và bảo hiểm điện tử (insurtech). Bên cạnh đó, hệ
+            sinh thái ICC kết nối với các thương hiệu sản xuất ô tô và hệ thống
+            gara trên khắp 63 tỉnh thành.
+          </p>
+          <p class="text-justify">
+            Với triết lý kinh doanh:
+            <span class="text-blue-500">More options, more better!</span>
+            <span class="font-medium">- Thêm lựa chọn, thêm lợi ích!</span>
+            <span class="text-red-500">ICC-OFFB</span> luôn nỗ lực để trở thành
+            một sự lựa chọn phù hợp nhất của khách hàng và đối tác.
+          </p>
+        </div>
+        <div class="absolute right-10 bottom-10 text-white z-10">
+          <p class="font-medium italic text-lg">More options, more better!</p>
+          <p class="italic">
+            Chúng tôi luôn nỗ lực để trở thành sự lựa chọn phù hợp nhất của bạn
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần 2: Cam kết với khách hàng -->
+    <div class="w-full bg-white p-10">
+      <div class="flex flex-col items-end text-right text-black">
+        <h6 class="font-normal capitalize py-2 text-gray-600">
+          Cam kết khách hàng
+        </h6>
+        <hr class="w-[30%] border" />
+        <h3 class="font-medium capitalize py-5 text-primaryDark">
+          ICC-OFB Cam kết cung cấp Giá trị vượt trội
+        </h3>
+        <div class="text-left leading-6 w-[75%] space-y-4 text-base">
+          <div class="flex justify-between w-full">
+            <div class="w-[50%] text-justify px-5">
+              Bảo hiểm ICC theo đuổi sứ mệnh "Tạo bước đột phá trong hành trình
+              trải nghiệm của khách hàng khi sử dụng dịch vụ bảo hiểm thông qua
+              các sản phẩm cá nhân hóa và dịch vụ xuất sắc, trên nền tảng công
+              nghệ và chuyển đổi số."
+            </div>
+            <div class="w-[50%] text-justify">
+              <img src="./assets/img/about/about_image_2.png" alt="Hình ảnh minh họa" />
+            </div>
+          </div>
+          <div class="flex justify-between w-full my-5">
+            <div class="w-[50%] text-end px-5">
+              <p class="uppercase font-medium text-md">
+                Giá trị cam kết với khách hàng
+              </p>
+            </div>
+            <div class="w-[50%]">
+              <ul class="list-disc ml-4">
+                <li>
+                  <span class="uppercase font-medium">TỐC ĐỘ: </span>Bồi thường
+                  nhanh
+                </li>
+                <li>
+                  <span class="uppercase font-medium">MINH BẠCH: </span>Công
+                  khai và nhất quán bảo vệ quyền lợi khách hàng
+                </li>
+                <li>
+                  <span class="uppercase font-medium">ĐƠN GIẢN: </span>Bảo hiểm
+                  dễ hiểu, dễ sử dụng, ít giấy tờ thủ tục
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex justify-between w-full my-5">
+            <div class="w-[50%] text-end lg:pr-14">
+              <p class="uppercase font-medium text-md">Quy tắc hành động</p>
+            </div>
+            <div class="w-[50%]">
+              <ul class="list-disc ml-4">
+                <li>Lấy khách hàng làm trung tâm</li>
+                <li>Linh hoạt – Tốc độ – Táo bạo</li>
+                <li>Tinh thần đồng đội</li>
+                <li>Sáng tạo – Đổi mới</li>
+                <li>Khiêm tốn – Hướng đến kết quả</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex justify-between w-full my-5">
+            <div class="w-[50%] text-end lg:pr-14">
+              <p class="uppercase font-medium text-md">Tầm nhìn</p>
+            </div>
+            <div class="w-[50%]">
+              <ul class="list-disc ml-4">
+                <li>
+                  Trở thành sự lựa chọn số 1 của khách hàng về bảo hiểm xe cơ
+                  giới tại Việt Nam.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần 3: Thế mạnh của bảo hiểm ICC-OFFB -->
+    <div class="relative w-full bg-white p-10">
+      <div class="flex flex-col items-end text-right text-black">
+        <h6 class="font-normal capitalize pb-2 text-gray-600">
+          Thế mạnh của bảo hiểm ICC-OFFB
+        </h6>
+        <hr class="w-[30%] border" />
+        <h3 class="font-medium capitalize py-5 text-primaryDark w-[60%]">
+          Đặt khách hàng là trọng tâm, Bảo hiểm ICC-OFFB đem đến các giải pháp
+          tối ưu dựa trên nền tảng công nghệ tiên tiến
+        </h3>
+        <div class="text-left leading-5 w-[70%] space-y-4 text-sm mb-10">
+          <div class="flex justify-between w-full">
+            <div class="w-[30%]"></div>
+            <div class="w-[70%] text-justify">
+              Với các thế mạnh được hợp cộng từ các đơn vị thành viên trong hệ
+              sinh thái ICC, Bảo hiểm ICC đang sở hữu các ưu thế vượt trội, mang
+              đến cơ hội thiết kế các gói giải pháp, sản phẩm bảo hiểm chuyên
+              biệt được cá nhân hóa tối ưu cho từng khách hàng.
+            </div>
+          </div>
+          <div class="flex justify-between w-full">
+            <div class="w-[30%] text-end lg:pr-14">
+              <p class="uppercase font-medium text-md">
+                Thiết kế sản phẩm & dịch vụ
+              </p>
+            </div>
+            <div class="w-[70%]">
+              <ul class="list-disc">
+                <li>
+                  "ONE STOP SHOP" – dịch vụ "1 điểm chạm": Cấp đơn bảo hiểm, sửa
+                  chữa, giám định bồi thường ngay tại showroom chính hãng, không
+                  phải chờ đợi.
+                </li>
+                <li>
+                  Cung cấp giá trị trọn đời xe: mua xe mới, đổi xe cũ lấy xe
+                  mới, tài chính và bảo hiểm.
+                </li>
+                <li>Bảo hiểm dễ hiểu, dễ sử dụng, cá nhân hóa cao.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex justify-between w-full">
+            <div class="w-[30%] text-end lg:pr-14">
+              <p class="uppercase font-medium text-md">Tốc độ bồi thường</p>
+            </div>
+            <div class="w-[70%]">
+              <ul class="list-disc">
+                <li>Quy trình bồi thường tinh gọn và xử lý tốc độ.</li>
+                <li>Thủ tục bồi thường đơn giản ít giấy tờ.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex justify-between w-full">
+            <div class="w-[30%] text-end lg:pr-14">
+              <p class="uppercase font-medium text-md">
+                Công nghệ & Chuyển đổi số
+              </p>
+            </div>
+            <div class="w-[70%]">
+              <ul class="list-disc">
+                <li>
+                  Ứng dụng các công nghệ mới nhằm cung cấp sản phẩm & dịch vụ
+                  cho khách hàng, đối tác trên nền tảng và hệ sinh thái số.
+                </li>
+                <li>
+                  Mang đến trải nghiệm thông minh, liền mạch và tiện dụng cho
+                  khách hàng khi tham gia Bảo hiểm ICC.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="flex justify-center">
+        <app-featback class="text-xs w-80 absolute bottom-5 z-40"></app-featback>
+      </div>
+      <div class="w-full">
+        <img src="./assets/img/about/featback-about.jpg" class="w-full lg:!h-56 object-cover" alt="Hình ảnh phản hồi" />
+      </div>
+    </div>
+
+    <!-- phan 4 đối tác -->
+
+    <div class="w-full bg-white flex flex-col">
+      <div class="bg-about__4 bg-cover bg-no-repeat w-full lg:h-[45vh]">
+        <div class="p-10 flex flex-col items-end text-right ">
+          <h6 class="font-normal capitalize pb-2 text-gray-600">
+            Hợp tác - đối tác
+          </h6>
+          <hr class="w-[30%] border">
+          <h3 class="font-medium capitalize py-5 text-primaryDark w-[60%]">
+            Những đối tác lớn đồng hành cùng sản phẩm
+          </h3>
+        </div>
+      </div>
+      <div class="text-black  flex flex-col items-end text-right  py-5 px-10 text-lg">
+        <div class="w-[70%] text-center ">
+          <p class="px-24">
+            Với các giải pháp bảo hiểm đa dạng, Bảo hiểm ICC đã nhận được sự tin tưởng và đồng hành của rất nhiều đối
+            tác,
+            khách hàng lớn, từ các tập đoàn hàng đầu tới các cá nhân và đối tượng chuyên biệt.
+            <br> Một số đối tác tiêu biểu của chúng tôi:
+          </p>
+          <swiper-container class="pt-5" loop="true" speed="500" autoplay-delay="2500" space-between="30"
+            [breakpoints]="breakpoints">
+            <swiper-slide class="w-1/6 h-auto object-contain"><img src="./assets/img/logo/BAOVIET.jpg"
+                alt=""></swiper-slide>
+            <swiper-slide class="w-1/6 h-auto object-contain"><img src="./assets/img/logo/TASCO.png"
+                alt=""></swiper-slide>
+            <swiper-slide class="w-1/6 h-auto object-contain"><img src="./assets/img/logo/PVI.png"
+                alt=""></swiper-slide>
+            <swiper-slide class="w-1/6 h-auto object-contain"><img src="./assets/img/logo/AAA.png"
+                alt=""></swiper-slide>
+            <swiper-slide class="w-1/6 h-auto object-contain"><img src="./assets/img/logo/MIC.png"
+                alt=""></swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+
+    </div>
+    <!-- footer -->
+    <footer class="bg__footer bg-cover  flex flex-col items-end text-left px-10">
+      <div class="w-[65%]">
+          <div class="sm:text-lg md:text-base text-gray-500 sm:px-2">
+              <div class="flex justify-start justify-items-center items-center py-4 gap-x-3">
+                  <p
+                      class="font-semibold text-white uppercase tracking-wider text-2xl border-2 border-white rounded-full py-2 px-4">
+                      ICC-OF.FB</p>
+                  <p class="mx-5 text-gray-400">|</p>
+                  <span class="text-gray-300 text-base  border-gray-600 border-opacity-20">More options, more
+                      better!</span>
+              </div>
+              <hr class="border border-gray-500 border-opacity-20">
+              <p class="text-sm my-3">Nền tảng Bảo hiểm công nghệ - Giải pháp kết nối và cung cấp trực tuyến
+                  sản phẩm bảo hiểm chọn lọc tốt nhất từ các nhà Bảo hiểm hàng đầu. Quản lý bởi Công ty CP
+                  Công nghệ ICC ECO</p>
+                  <div class="py-5 grid grid-cols-1 md:grid-cols-2 gap-x-5">
+                      <!-- Cột trái -->
+                      <div class="grid grid-cols-2 gap-x-5">
+                          <p class="text-right"><strong>MST</strong></p>
+                          <p>031.854.9627</p>
+
+                          <p class="text-right"><strong>Địa chỉ</strong></p>
+                          <p>224A Bạch Đằng, Phường 24, Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam</p>
+
+                          <p class="text-right"><strong>Hotline</strong></p>
+                          <p><a href="phone">0936.224.224</a></p>
+
+                          <p class="text-right"><strong>Email</strong></p>
+                          <p><a href="email">info&#64;icceco.com</a></p>
+                      </div>
+
+                      <!-- Cột phải -->
+                      <div class="grid grid-cols-2 gap-x-5">
+                          <p class="text-right"><strong>Chính sách</strong></p>
+                          <div class="flex flex-col">
+                              <a href="">Điều khoản sử dụng</a>
+                              <a href="">Chính sách bảo mật</a>
+                              <a href="">Chính sách hoàn hủy</a>
+                          </div>
+                      </div>
+                  </div>
+
+
+              <hr class="border border-gray-500 border-opacity-20 ">
+              <div class="Copyright py-3 text-gray-500 text-sm text-right">
+                  Copyright © 2024 by ICC. All rights reserved.
+              </div>
+          </div>
+
+      </div>
+  </footer>
+  </div>
+</div>

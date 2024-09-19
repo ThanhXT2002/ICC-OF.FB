@@ -53,12 +53,26 @@
   .bg__multi__home{
     background-image: url('/assets/img/home_man.png'), url('/assets/img/home_layer.jpg');
     background-position: left, right;
-    background-size: auto 100%,cover;
+    background-size: auto 100%, cover;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .bg__about{
+    background-image: url('/assets/img/home_man.png');
+    background-position: left;
+    background-size: auto 100%;
+    background-repeat:no-repeat;
+  }
+
+  .bg__footer{
+    background-image: url('/assets/img/footer_right.jpg'),url('/assets/img/footer_color.png') ;
+    background-position:  right, center;
+    background-size: contain, 100% 100%;
     background-repeat: no-repeat, no-repeat;
   }
 
  .title{
-  @apply  text-4xl lg:text-5xl  font-normal font-fira
+  @apply text-3xl md:text-4xl lg:text-5xl  font-normal font-fira
  }
 
  .shadow-glow {
@@ -68,6 +82,30 @@
 .shadow_img{
   box-shadow: rgba(21, 90, 239, 0.56) 0px 22px 100px 30px;
 
+}
+
+h1, .h1 {
+  @apply text-5xl font-bold;
+}
+
+h2, .h2 {
+  @apply text-4xl font-bold;
+}
+
+h3, .h3 {
+  @apply text-3xl font-bold;
+}
+
+h4, .h4 {
+  @apply text-2xl font-semibold;
+}
+
+h5, .h5 {
+  @apply text-xl font-semibold;
+}
+
+h6, .h6 {
+  @apply text-lg font-semibold;
 }
 
 }
