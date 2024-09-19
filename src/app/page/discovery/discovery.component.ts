@@ -1,10 +1,10 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal,PLATFORM_ID, Inject, HostListener  } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ProductIccService } from '../../core/service/product.service';
 import { IProduct } from '../../core/interface/product.interface';
 import { ProductMenuComponent } from "../components/product-menu/product-menu.component";
 import { SanitizeHtmlPipe } from '../../core/pipe/sanitize-html.pipe';
-import { CommonModule } from '@angular/common';
+import { CommonModule,isPlatformBrowser  } from '@angular/common';
 
 
 export type MenuItemHeader = {
@@ -30,13 +30,17 @@ export class DiscoveryComponent implements OnInit {
   products: IProduct[] = [];
   selectedProduct: IProduct | null = null;
 
+  isLgScreen: boolean = false;
+
   constructor(
     private router: Router,
     private productService: ProductIccService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ){}
 
   ngOnInit(): void {
     this.getAllProducts()
+    this.checkScreenSize()
   }
 
   getAllProducts() {
@@ -60,6 +64,19 @@ export class DiscoveryComponent implements OnInit {
 
   navigateToProduct(slug: string) {
     this.router.navigate(['/product', slug]);
+  }
+
+  // Sử dụng HostListener để lắng nghe sự kiện resize
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    if (isPlatformBrowser(this.platformId)) {
+      // Chỉ thực hiện khi đang ở môi trường trình duyệt (client-side)
+      this.isLgScreen = window.innerWidth >= 1024; // Theo Tailwind, lg là >= 1024px
+    }
   }
 
 }

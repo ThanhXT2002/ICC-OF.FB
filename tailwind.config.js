@@ -10,6 +10,7 @@ module.exports = {
         'home': 'url(./assets/img/bussiness/businessman6.jpg)',
         'about__1': 'url(./assets/img/about/about_image_1.png)',
         'about__4': 'url(./assets/img/about/about_image_4.jpg)',
+        'img__black': 'url(./assets/img/black.png)',
         'water-mark': 'url(./assets/img/water_mark.png)',
         'discovery': 'url(./assets/img/icon/discovery.jpg)',
         'video': 'url(./assets/video/5823401530981.mp4)',
