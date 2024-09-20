@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FeatbackComponent } from "../components/featback/featback.component";
+import { BtnDiscoveryComponent } from '../components/btn-discovery/btn-discovery.component';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { FeatbackComponent } from "../components/featback/featback.component";
     DragToggleComponent,
     FormsModule,
     CommonModule,
-    FeatbackComponent
+    FeatbackComponent,
+    BtnDiscoveryComponent
 ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',

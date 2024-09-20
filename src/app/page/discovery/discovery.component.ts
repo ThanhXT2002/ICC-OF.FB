@@ -7,20 +7,14 @@ import { SanitizeHtmlPipe } from '../../core/pipe/sanitize-html.pipe';
 import { CommonModule,isPlatformBrowser  } from '@angular/common';
 
 
-export type MenuItemHeader = {
-  label: string;
-  route?:string;
-  icon?:string;
-}
-
 @Component({
   selector: 'app-discovery',
   standalone: true,
   imports: [
     RouterModule,
-    ProductMenuComponent,
     SanitizeHtmlPipe,
-    CommonModule
+    CommonModule,
+    ProductMenuComponent
 ],
   templateUrl: './discovery.component.html',
   styleUrl: './discovery.component.scss'

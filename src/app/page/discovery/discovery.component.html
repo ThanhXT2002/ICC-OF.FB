@@ -24,33 +24,12 @@
             }
           </div>
         </div>
-        <div class="border border-white rounded-md h-auto text-center p-3">
-          <p class="text-sm md:text-lg lg:text-xl mb-3">Các sản phẩm <span class="text-blue-500">Bảo hiểm</span> dành cho bạn và người thân
-          </p>
-          <div class="list-product grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            @for (product of products; track product.key) {
-            <div class="flex-col justify-between items-center justify-items-center group justify-self-center"
-              (mouseenter)="showProductDetails(product)" (mouseleave)="hideProductDetails()"
-              (click)="navigateToProduct(product.slug)">
-              <div class="relative overflow-hidden inner-shadow-ellipse">
-                <img [src]="product.icon" alt="{{product.shortTiltle}}"
-                  class="inline-block icon-img relative z-10 transition-transform duration-300 group-hover:scale-125">
-                <div
-                  class="absolute inset-0 bg-ellipse-inner-shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                </div>
-              </div>
-              <div class="lg:invisible lg:group-hover:visible ">
-                <p class="text-xs pb-1 border-b border-gray-300 max-w-fit inline-block">{{product.shortTiltle}}</p>
-                <br>
-                <button
-                  class="text-red-500 custom-shadow bg-custom-gradient font-semibold px-2 py-1 rounded-full text-xs mt-1">
-                  Mua ngay
-                </button>
-              </div>
-            </div>
-            }
-          </div>
-        </div>
+          <app-product-menu
+          [products]="products"
+          (productHover)="showProductDetails($event)"
+          (productLeave)="hideProductDetails()"
+          (productClick)="navigateToProduct($event)">
+        </app-product-menu>
       </div>
     <div class="lg:w-[45%] lg:px-5 px-2  py-5 lg:py-0 text-justify">
       <!-- Phần hiển thị nội nội dung trang discover, khi hover vào img thì ẩn đi -->
@@ -76,19 +55,19 @@
       <!-- Phần hiển thị nội nội dung chi tiết sản phẩm, khi hover chuột vào img thì hiển thị phần này  -->
       <div class="detail__product leading-6" [class.hidden]="!selectedProduct">
         @if (selectedProduct) {
-        <h1 class="text-2xl font-semibold uppercase my-3 tracking-wide">
+        <p class="text-2xl font-semibold uppercase my-3 tracking-wide">
           {{selectedProduct.title}}
-        </h1>
+        </p>
         <p class="text-sm leading-6" [innerHtml]="(selectedProduct.description ?? '') | sanitizeHtml">
         </p>
-        <h1 class="text-xl font-semibold text-blue-500 mt-3">
+        <p class="text-xl font-semibold text-blue-500 mt-3">
           Phạm vi bảo hiểm
-        </h1>
+        </p>
         <div class="text-sm my-2 leading-6" [innerHtml]="(selectedProduct.coverage ?? '') | sanitizeHtml">
         </div>
-        <h1 class="text-xl font-semibold text-blue-500 mt-3">
+        <p class="text-xl font-semibold text-blue-500 mt-3">
           Quyền lợi bảo hiểm
-        </h1>
+        </p>
         <div class="text-sm leading-6 mt-2" [innerHtml]="(selectedProduct.interest ?? '') | sanitizeHtml">
         </div>
         }

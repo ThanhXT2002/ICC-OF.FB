@@ -1,20 +1,5 @@
 <div class="w-full bg-white">
-  <div class="hidden lg:block bg__about h-full lg:w-[35%] fixed left-0 z-30 mt-[4.5rem]">
-    <div class="absolute left-[8rem] lg:left-[36%] top-[42%]">
-      <div class="absolute top-[-65px] left-[35px] z-10" [class.hidden]="toggleValue">
-        <div class="bg-primaryColor text-white p-3 rounded-lg w-max ml-10">
-          <p class="relative z-10 text-xl">Khám phá ngay</p>
-          <div
-            class="absolute top-6 left-16 w-0 h-0 border-l-transparent border-r-[30px] border-r-transparent border-t-[90px] border-t-primaryColor rotate-45">
-          </div>
-        </div>
-      </div>
-      <div class="absolute">
-        <app-drag-toggle [(ngModel)]="toggleValue" (dragEnd)="onDragEnd($event)" (click)="navigateToDiscovery()">
-        </app-drag-toggle>
-      </div>
-    </div>
-  </div>
+<app-btn-discovery class="hidden lg:block"></app-btn-discovery>
   <div class="w-full bg-black">
     <!-- Phần 1: Giới thiệu -->
     <div class="bg-about__1 bg-cover bg-no-repeat w-full bg-bottom">

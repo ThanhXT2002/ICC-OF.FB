@@ -1,35 +1,43 @@
-<div class="bg-discovery-page bg-cover bg-repeat w-full h-auto lg:min-h-[calc(100%-4.8rem)]    relative">
-  <div class=" py-7 lg:py-10 space-y-8 text-center ">
+<div class="w-full h-auto lg:h-screen bg-img__black bg-cover"
+[ngStyle]="isLgScreen ? {
+  'background-image': 'url(./assets/img/man.png), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + (product?.image || './assets/img/black.png') + '), linear-gradient(rgb(24, 24, 29), black)',
+ 'background-position': 'left, right, right, center',
+ 'background-size': 'auto 100%, 80% 100%, 80% 100%, 100% 100%',
+ 'background-repeat': 'no-repeat, no-repeat, no-repeat, no-repeat'
+} : null">
+  <div class="pt-32"></div>
+  <div class="lg:pt-0 lg:pb-5 space-y-8 text-center bg-water-mark w-[80%] bg-no-repeat bg-contain bg-center mx-auto ">
     <h1 class="title text-blue-400">Chuyên gia bảo hiểm xe</h1>
-    <p class="text-white text-xl"> <span class="font-light">Hotline:</span> 0936 224 224</p>
+    <p class="text-white text-xl"><span class="font-light">Hotline:</span> 0936 224 224</p>
   </div>
   @if (product) {
-  <div class="flex flex-col lg:flex-row gap-x-5 w-full px-5 justify-end ">
-    <div class="lg:absolute lg:-bottom-5 left-0 lg:m-5 lg:w-[50%]">
-      <div class=" flex justify-center items-center justify-items-center">
-        <div class="hexagon w-80 h-72 relative overflow-hidden mb-10">
-          <video class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-              <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
-          </video>
+    <div class="flex flex-col lg:flex-row gap-x-5  px-5 justify-end w-full">
+      <div class="lg:fixed lg:-bottom-0 left-0 lg:ml-5 lg:w-[50%] z-20">
+        <div class="flex justify-center lg:justify-start mb-2 lg:ml-[18%]  lg:mb-[8%] ">
+        <div class="hexagon w-72 h-64 overflow-hidden shadow_img shadow-2xl my-2">
+          <img src="{{product.gif}}" class="w-full h-full object-cover " alt="">
       </div>
       </div>
-
+      <app-product-menu
+      [products]="products"
+      (productClick)="navigateToProduct($event)">
+    </app-product-menu>
     </div>
-    <div class="lg:w-[40%] px-5 ] leading-8">
-      <h1 class="text-2xl font-semibold uppercase my-5 tracking-wide">
+    <div class="lg:w-[45%] lg:px-5 px-2  py-5 lg:py-0 text-justify leading-6">
+      <h1 class=" text-lg lg:text-2xl font-semibold uppercase my-3 tracking-wide">
         {{product.title}}
       </h1>
-      <p class="text-sm  leading-8" [innerHtml]="(product.description ?? '') | sanitizeHtml">
+      <p class="text-sm  leading-6" [innerHtml]="(product.description ?? '') | sanitizeHtml">
       </p>
-      <h1 class="text-xl font-semibold text-blue-500 mt-5">
+      <h1 class="text-xl font-semibold text-blue-500 mt-3">
         Phạm vi bảo hiểm
       </h1>
-      <div class="text-sm my-4 leading-8" [innerHtml]="(product.coverage ?? '') | sanitizeHtml">
+      <div class="text-sm my-2 leading-6" [innerHtml]="(product.coverage ?? '') | sanitizeHtml">
       </div>
-      <h1 class="text-xl font-semibold text-blue-500 mt-5">
+      <h1 class="text-xl font-semibold text-blue-500 mt-3">
         Quyền lợi bảo hiểm
       </h1>
-      <div class="text-sm  leading-8 mt-3" [innerHtml]="(product.interest ?? '') | sanitizeHtml">
+      <div class="text-sm  leading-6 mt-2" [innerHtml]="(product.interest ?? '') | sanitizeHtml">
       </div>
     </div>
   </div>

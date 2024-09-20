@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../../core/interface/product.interface';
 import { Router, RouterModule } from '@angular/router';
-import { ProductIccService } from '../../../core/service/product.service';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-product-menu',
@@ -15,45 +15,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-menu.component.scss'
 })
 export class ProductMenuComponent {
-  products: IProduct[] = [];
-  selectedProduct: IProduct | null = null;
+  @Input() products: IProduct[] = [];
+  @Output() productHover = new EventEmitter<IProduct>();
+  @Output() productLeave = new EventEmitter<void>();
+  @Output() productClick = new EventEmitter<string>();
 
-  constructor(
-    private productService: ProductIccService,
-    private router: Router
-  ){
-
+  onProductHover(product: IProduct) {
+    this.productHover.emit(product);
   }
 
-  ngOnInit(): void {
-    this.getAllProducts()
+  onProductLeave() {
+    this.productLeave.emit();
   }
 
-  getAllProducts() {
-    this.productService.getAll().subscribe({
-      next: (products) => {
-
-        this.products = products;
-      },
-      error: (error) => {
-        console.error('Lỗi khi lấy danh sách bài viết:', error);
-      }
-    });
-  }
-
-  showProductDetails(product: IProduct) {
-    this.selectedProduct = product;
-  }
-
-  hideProductDetails() {
-    this.selectedProduct = null;
-  }
-  
-  navigateToProduct(slug: string) {
-    this.router.navigate(['/product', slug]);
-  }
-
-  navigateBack() {
-    this.router.navigate(['/discovery']);
+  onProductClick(slug: string) {
+    this.productClick.emit(slug);
   }
 }

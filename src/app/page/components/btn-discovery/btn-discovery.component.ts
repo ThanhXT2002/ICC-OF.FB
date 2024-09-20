@@ -1,26 +1,22 @@
-import { Component,} from '@angular/core';
-import { DragToggleComponent } from '../components/drag-toggle/drag-toggle.component';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DragToggleComponent } from '../drag-toggle/drag-toggle.component';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BtnDiscoveryComponent } from "../components/btn-discovery/btn-discovery.component";
-
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-btn-discovery',
   standalone: true,
   imports: [
     DragToggleComponent,
     FormsModule,
     CommonModule,
-    BtnDiscoveryComponent
-],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  ],
+  templateUrl: './btn-discovery.component.html',
+  styleUrl: './btn-discovery.component.scss'
 })
-export class HomeComponent  {
+export class BtnDiscoveryComponent {
   toggleValue = false;
-
   constructor(private router: Router) {}
 
   onDragEnd(isChecked: boolean) {
@@ -34,5 +30,4 @@ export class HomeComponent  {
       this.router.navigate(['/discovery']);
     }, 300);
   }
-
 }

@@ -44,36 +44,6 @@ export class HeaderComponent {
     // Hàm này đóng menu di động.
   }
 
-  menuItem = signal<MenuItemHeader[]>([
-    {
-
-      label: "Bảo Hiểm TNDS BB Xe Máy",
-      route: '/about',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-
-      label: "Bảo Hiểm TNDS BB Ô Tô",
-      route: '/home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-
-      label: "Bảo Hiểm Vật Chất Ô Tô",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-      label: "Bảo Hiểm Tai Nạn Cá Nhân",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-    {
-      label: "Bảo Hiểm Sức Khỏe",
-      route: 'home',
-      icon:'./assets/img/icon/icon_default.png'
-    },
-  ]);
 
   ngOnInit(): void {
     this.getAllProducts()
@@ -89,6 +59,16 @@ export class HeaderComponent {
         console.error('Lỗi khi lấy danh sách bài viết:', error);
       }
     });
+  }
+
+  isSearchToggled: boolean = false;
+  isSmallScreen: boolean = false;
+
+  toggSearch() {
+    this.isSearchToggled = !this.isSearchToggled; // Toggle trạng thái
+  }
+  isInputSearch(): boolean {
+    return this.isSearchToggled; // Trả về trạng thái hiện tại
   }
 
 

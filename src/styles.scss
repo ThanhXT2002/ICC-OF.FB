@@ -28,7 +28,7 @@
   }
 
   .nav__link{
-    @apply py-3 lg:py-0 mx-2 bg-white  lg:place-content-center lg:hover:bg-custom-gradient lg:rounded lg:hover:shadow-custom-shadow lg:hover:border-b-2 border-gray-500
+    @apply py-3 lg:py-0 lg:mx-1 bg-white  place-content-center lg:hover:bg-custom-gradient lg:rounded lg:hover:shadow-custom-shadow lg:hover:border-b-2 border-gray-500
   }
 
   .menu__item{
@@ -50,11 +50,11 @@
 
 @layer utilities{
 
-  .bg__multi__home{
-    background-image: url('/assets/img/home_man.png'), url('/assets/img/home_layer.jpg');
-    background-position: left, right;
-    background-size: auto 100%, cover;
-    background-repeat: no-repeat, no-repeat;
+  .bg__home{
+    background-image:  url('/assets/img/home_layer.jpg');
+    background-position: center;
+    background-size:  cover;
+    background-repeat: no-repeat;
   }
 
   .bg__about{
