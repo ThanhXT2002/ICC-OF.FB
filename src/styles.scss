@@ -59,8 +59,8 @@
 
   .bg__about{
     background-image: url('/assets/img/home_man.png');
-    background-position: left;
-    background-size: auto 100%;
+    background-position: right;
+    background-size: cover;
     background-repeat:no-repeat;
   }
 
@@ -74,7 +74,9 @@
  .title{
   @apply text-3xl md:text-4xl lg:text-5xl  font-normal font-fira
  }
-
+ .title__about{
+  @apply text-xl md:text-2xl lg:text-3xl font-medium capitalize py-5 text-primaryDark
+ }
  .shadow-glow {
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
 }

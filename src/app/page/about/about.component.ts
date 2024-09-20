@@ -38,7 +38,7 @@ export class AboutComponent {
 
   breakpoints = {
     // when window width is >= 640px
-    640: {
+    480: {
       slidesPerView: 2,
     },
     // when window width is >= 768

@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductMenuComponent {
   products: IProduct[] = [];
+  selectedProduct: IProduct | null = null;
 
   constructor(
     private productService: ProductIccService,
@@ -39,6 +40,15 @@ export class ProductMenuComponent {
       }
     });
   }
+
+  showProductDetails(product: IProduct) {
+    this.selectedProduct = product;
+  }
+
+  hideProductDetails() {
+    this.selectedProduct = null;
+  }
+  
   navigateToProduct(slug: string) {
     this.router.navigate(['/product', slug]);
   }
