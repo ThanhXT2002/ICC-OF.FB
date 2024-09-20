@@ -149,13 +149,12 @@
         </div>
       </div>
     </div>
-
+    <div class="w-full py-10 bg-white">
+      <img src="./assets/img/about/featback-about.jpg" class="w-full lg:!h-56 object-cover" alt="Hình ảnh phản hồi" />
+    </div>
     <div class="relative py-10 bg-white">
       <div class="flex justify-center">
         <app-featback class="text-xs w-80 absolute bottom-5 z-10"></app-featback>
-      </div>
-      <div class="w-full">
-        <img src="./assets/img/about/featback-about.jpg" class="w-full lg:!h-56 object-cover" alt="Hình ảnh phản hồi" />
       </div>
     </div>
 
@@ -174,7 +173,7 @@
       </div>
       <div class="text-black  flex flex-col items-end text-right  py-5 px-10 text-lg">
         <div class="lg:w-[70%] text-center ">
-          <p class="text-sm md:text-base lg:text-lg px-5 md:px-24 text-black">
+          <p class="text-sm md:text-base lg:text-lg  md:px-24 text-black text-justify md:text-center">
             Với các giải pháp bảo hiểm đa dạng, Bảo hiểm ICC đã nhận được sự tin tưởng và đồng hành của rất nhiều đối
             tác,
             khách hàng lớn, từ các tập đoàn hàng đầu tới các cá nhân và đối tượng chuyên biệt.
@@ -183,17 +182,16 @@
 
         </div>
         <div class="w-full lg:w-[70%]">
-          <swiper-container class="pt-5" [pagination]="{ clickable: true }" loop="true" speed="500" autoplay-delay="2500" space-between="30"
-            [breakpoints]="breakpoints">
-            <swiper-slide class="lg:w-1/6 h-auto object-contain"><img src="./assets/img/logo/BAOVIET.jpg"
+          <swiper-container class="pt-5" [pagination]="{ clickable: true }" loop="true" speed="500" autoplay-delay="2500" space-between="30" [breakpoints]="breakpoints">
+            <swiper-slide ><img class="w-[140px] md:w-auto" src="./assets/img/logo/BAOVIET.jpg"
                 alt=""></swiper-slide>
-            <swiper-slide class="lg:w-1/6 h-auto object-contain"><img src="./assets/img/logo/TASCO.png"
+            <swiper-slide ><img class="w-[140px] md:w-auto" src="./assets/img/logo/TASCO.png"
                 alt=""></swiper-slide>
-            <swiper-slide class="lg:w-1/6 h-auto object-contain"><img src="./assets/img/logo/PVI.png"
+            <swiper-slide ><img class="w-[140px] md:w-auto" src="./assets/img/logo/PVI.png"
                 alt=""></swiper-slide>
-            <swiper-slide class="lg:w-1/6 h-auto object-contain"><img src="./assets/img/logo/AAA.png"
+            <swiper-slide ><img class="w-[140px] md:w-auto" src="./assets/img/logo/AAA.png"
                 alt=""></swiper-slide>
-            <swiper-slide class="lg:w-1/6 h-auto object-contain"><img src="./assets/img/logo/MIC.png"
+            <swiper-slide ><img class="w-[140px] md:w-auto" src="./assets/img/logo/MIC.png"
                 alt=""></swiper-slide>
           </swiper-container>
         </div>
@@ -204,12 +202,12 @@
     <footer class="bg__footer bg-cover  flex flex-col items-end text-left px-5 lg:px-10">
       <div class="lg:w-[70%]">
           <div class="text-sm md:text-base text-gray-500 px-2">
-              <div class="flex justify-start justify-items-center items-center py-2 lg:py-5 gap-x-3">
-                  <p
-                      class="font-semibold text-white uppercase tracking-wider text-sm md:text-lg lg:text-2xl border-2 border-white rounded-full py-2 px-4">
-                      ICC-OGG.FB</p>
-                  <p class="mx-5 text-gray-400">|</p>
-                  <span class="text-gray-300 text-base  border-gray-600 border-opacity-20">More options, more
+              <div class="flex  justify-start justify-items-center items-center py-2 lg:py-5 gap-x-1 md:gap-x-3">
+                <p class="font-semibold text-white uppercase tracking-wider text-sm md:text-lg lg:text-2xl border-2 border-white rounded-full py-2 px-4 whitespace-nowrap">
+                  ICC-OGG.FB
+                </p>
+                  <p class="hidden md:block mx-5 text-gray-400">|</p>
+                  <span class="text-gray-300 text-sm md:text-base  border-gray-600 border-opacity-20">More options, more
                       better!</span>
               </div>
               <hr class="border border-gray-500 border-opacity-20">

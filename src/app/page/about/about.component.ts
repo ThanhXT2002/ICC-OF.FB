@@ -39,18 +39,18 @@ export class AboutComponent {
   }
 
   breakpoints = {
-    // when window width is >= 640px
-    480: {
-      slidesPerView: 2,
+    // Kích thước màn hình nhỏ hơn 640px (sm - mobile)
+    320: {
+      slidesPerView: 2, // Hiển thị 2 slide
     },
-    // when window width is >= 768
+    // Kích thước màn hình nhỏ hơn 768px (md - tablet)
     768: {
-      slidesPerView: 3,
+      slidesPerView: 3, // Hiển thị 3 slide
     },
-    // when window width is >= 1024px
+    // Kích thước màn hình nhỏ hơn 1024px (lg - laptop)
     1024: {
-      slidesPerView: 5,
-    }
+      slidesPerView: 5, // Hiển thị 5 slide
+    },
   };
 
 }
